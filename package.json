@@ -1,0 +1,23 @@
+{
+  "name": "ci_cypress",
+  "version": "1.0.0",
+  "description": "1. `npx cypress open` - open GUI \r 2. `npx cypress run` - set up in CI and screenshot",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NTN-code/CI_Cypress.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NTN-code/CI_Cypress/issues"
+  },
+  "homepage": "https://github.com/NTN-code/CI_Cypress#readme",
+  "devDependencies": {
+    "cypress": "^11.1.0",
+    "cypress-iframe": "^1.0.1",
+    "cypress-recurse": "^1.24.0"
+  }
+}
