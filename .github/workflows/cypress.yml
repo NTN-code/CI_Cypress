@@ -17,3 +17,10 @@ jobs:
         browser: chrome
         # build: npm run build
         # start: npm start
+
+    - name: Save screenshots
+      uses: actions/upload-artifact@latest
+      if: failure()
+      with:
+          name: cypress-screenshots
+          path: cypress/screenshots
