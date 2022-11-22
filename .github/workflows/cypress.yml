@@ -11,17 +11,21 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Save screenshots
-      uses: actions/upload-artifact@v2
-      if: failure()
-      with:
-          name: cypress-screenshots
-          path: cypress/screenshots
-
     - name: Cypress run
       uses: cypress-io/github-action@v4.2.0
       with:
         browser: chrome
+        record: true
         # build: npm run build
         # start: npm start
+      env:
+        CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    # - name: Save screenshots
+    #   uses: actions/upload-artifact@v2
+    #   if: failure()
+    #   with:
+    #       name: cypress-screenshots
+    #       path: cypress/screenshots
 
