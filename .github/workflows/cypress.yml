@@ -11,6 +11,13 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
+    - name: Save screenshots
+      uses: actions/upload-artifact@v2
+      if: failure()
+      with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+
     - name: Cypress run
       uses: cypress-io/github-action@v4.2.0
       with:
@@ -18,9 +25,3 @@ jobs:
         # build: npm run build
         # start: npm start
 
-    - name: Save screenshots
-      uses: actions/upload-artifact@v2
-      if: failure()
-      with:
-          name: cypress-screenshots
-          path: cypress/screenshots
