@@ -31,6 +31,7 @@ describe('HomePage', () => {
 
   it("see my bag", () => {
     HomePage.openSelectMenu();
+    cy.wait(4000);
     HomePage.openMenuTitle(0);
     cy.location('href').should("be.equal", `${Cypress.config("baseUrl")}/shop/bag`)
   })
